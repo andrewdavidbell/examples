@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <!-- https://maven.apache.org/developers/conventions/code.html -->
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- <parent /> -->
+
+  <groupId>com.example</groupId>
+  <artifactId>java-spark</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Java Spark</name>
+  <description>Java Spark example REST webservice</description>
+  <url/>
+  <inceptionYear>2021</inceptionYear>
+
+  <organization />
+  <licenses />
+
+  <developers>
+    <developer>
+    <id/>
+    <name>Andew Bell</name>
+    <email></email>
+    <url>http://www.andrewdavidbell.com</url>
+    <roles>
+      <role>developer</role>
+    </roles>
+    <timezone>+10</timezone>
+    </developer>
+  </developers>
+
+  <contributors />
+
+  <mailingLists />
+
+  <!-- <prerequisites /> -->
+
+  <modules />
+
+  <scm />
+  <issueManagement />
+  <ciManagement />
+  <distributionManagement />
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <sparkjava.version>2.9.3</sparkjava.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.sparkjava</groupId>
+        <artifactId>spark-core</artifactId>
+        <version>${sparkjava.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-core</artifactId>
+    </dependency>
+  </dependencies>
+
+  <repositories />
+  <pluginRepositories />
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>Application</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <finalName>app</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting />
+
+  <profiles />
+
+</project>
