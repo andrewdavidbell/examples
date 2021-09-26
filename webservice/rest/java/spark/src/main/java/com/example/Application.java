@@ -1,3 +1,5 @@
+package com.example;
+
 import static spark.Spark.*;
 
 public class Application {
