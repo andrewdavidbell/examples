@@ -56,6 +56,7 @@
     <slf4j.version>1.7.25</slf4j.version>
     <maven.jar.version>2.4</maven.jar.version>
     <maven.assembly.version>3.2.0</maven.assembly.version>
+    <docker.maven.version></docker.maven.version>
   </properties>
 
   <dependencyManagement>
@@ -101,6 +102,11 @@
           <artifactId>maven-assembly-plugin</artifactId>
           <version>${maven.assembly.version}</version>
         </plugin>
+        <!-- <plugin>
+          <groupId>io.fabric8</groupId>
+          <artifactId>docker-maven-plugin</artifactId>
+          <version>${docker.maven.version}</version>
+        </plugin> -->
       </plugins>
     </pluginManagement>
     <plugins>
@@ -135,6 +141,27 @@
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>start</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>build</goal>
+              <goal>start</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>stop</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>stop</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

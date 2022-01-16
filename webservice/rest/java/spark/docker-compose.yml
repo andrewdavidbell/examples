@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  maven:
+    image: maven:3.8.3-openjdk-11
+    volumes:
+      - ./:/usr/src/spark
+      - ${HOME}/.m2:/root/.m2
+    working_dir: /usr/src/spark
+    environment:
+      - TERM
