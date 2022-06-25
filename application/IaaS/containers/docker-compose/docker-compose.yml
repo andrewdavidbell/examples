@@ -1,0 +1,10 @@
+version: '2.2'
+services:
+  color-app:
+    image: pj3677/color-app:1.0.0
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    environment:
+      MESSAGE: "Hello World!"
+      FG_COLOR: "white"
+      BG_COLOR: "blue"

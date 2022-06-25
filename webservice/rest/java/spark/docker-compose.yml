@@ -1,5 +1,4 @@
 version: '3.7'
-
 services:
   maven:
     image: maven:3.8.3-openjdk-11
